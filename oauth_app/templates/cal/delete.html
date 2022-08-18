@@ -1,0 +1,4 @@
+{% extends 'cal/base.html' %}
+{% block content %}
+<tr><td colspan="2"><button type="submit" class="btn btn-info left" href="{% url 'event_delete' event.id %}"> Delete </button></td></tr>
+{% endblock %}

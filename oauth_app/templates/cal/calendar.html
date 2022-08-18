@@ -1,0 +1,15 @@
+<!-- cal/templates/cal/calendar.html -->
+
+{% extends 'cal/base.html' %}
+
+
+{% if user.is_authenticated %}
+{% block content %}
+<div class="clearfix">
+	<a class="btn btn-primary ml-3" href="event/new"> Add Event </a>
+	<button type="submit" class="btn btn-dark left" href="{% url 'oauth_app:calendar' %}?{{ prev_month }}"> Previous Month </button>
+	<a class="btn btn-dark right" href="{% url 'oauth_app:calendar' %}?{{ next_month }}"> Next Month </a>
+</div>
+{{ calendar }}
+{% endblock %}
+{% endif %}
